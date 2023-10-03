@@ -1,4 +1,4 @@
-#define aula1ex2
+#define aula1ex5
 
 /*1 - Escreva um programa que receba via teclado um tempo em segundos e converta
     para horas, minutos e segundos.
@@ -47,46 +47,39 @@ void main() {
 #ifdef aula1ex2
 #include <stdio.h>
 
-void main() {
-    short s;
-    long l;
-    int i;
-    float f;
-    double d;
-    char c;
+int main() {
+    short shortVar;
+    long longVar;
+    int intVar;
+    float floatVar;
+    double doubleVar;
+    char charVar;
 
-    printf("Digite um valor short: ");
-    scanf("%hd", &s);
+    printf("Digite um valor do tipo short: ");
+    scanf("%hd", &shortVar);
 
-    printf("Digite um valor long: ");
-    scanf("%ld", &l);
+    printf("Digite um valor do tipo long: ");
+    scanf("%ld", &longVar);
 
-    printf("Digite um valor int: ");
-    scanf("%d", &i);
+    printf("Digite um valor do tipo int: ");
+    scanf("%d", &intVar);
 
-    printf("Digite um valor float: ");
-    scanf("%f", &f);
+    printf("Digite um valor do tipo float: ");
+    scanf("%f", &floatVar);
 
-    printf("Digite um valor double: ");
-    scanf("%lf", &d);
+    printf("Digite um valor do tipo double: ");
+    scanf("%lf", &doubleVar);
 
-    printf("Digite um caractere: ");
-    scanf(" %c", &c);
+    printf("Digite um valor do tipo char: ");
+    scanf(" %c", &charVar); // Note o espaço antes de %c para ignorar espaços em branco
 
-    printf("\n%10d%20ld%30d\n", s, l, i);
-    printf("%40.2f%50.2lf%60c\n", f, d, c);
+    printf("\n");
+    printf("        10        20        30        40        50        60\n");
+    printf("12345678901234567890123456789012345678901234567890123456789012345\n");
+    printf("%5hd%20ld%20d\n", shortVar, longVar, intVar);
+    printf("%15.2f%20.2lf%20c\n", floatVar, doubleVar, charVar);
 
-       printf("\nDigite X para sair  \n");
-        char saida;
-        while(saida != 'X' && saida != 'x')
-            {
-                scanf(" %c", &saida);
-
-                if(saida != 'X' && saida != 'x') {
-                printf("Erro, digite novamente  \n");
-                }
-            }
-
+    return 0;
 }
 
 #endif
