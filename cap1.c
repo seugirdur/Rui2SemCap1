@@ -1,4 +1,4 @@
-#define aula1ex5
+#define aula1ex2
 
 /*1 - Escreva um programa que receba via teclado um tempo em segundos e converta
     para horas, minutos e segundos.
@@ -47,6 +47,15 @@ void main() {
 #ifdef aula1ex2
 #include <stdio.h>
 
+int contarAlgarismos(long numero) {
+    int contador = 0;
+    while (numero != 0) {
+        numero /= 10;
+        contador++;
+    }
+    return contador;
+}
+
 int main() {
     short shortVar;
     long longVar;
@@ -76,11 +85,19 @@ int main() {
     printf("\n");
     printf("        10        20        30        40        50        60\n");
     printf("12345678901234567890123456789012345678901234567890123456789012345\n");
-    printf("%5hd%20ld%20d\n", shortVar, longVar, intVar);
-    printf("%15.2f%20.2lf%20c\n", floatVar, doubleVar, charVar);
+
+    int larguraShort = contarAlgarismos(shortVar);
+    int larguraLong = contarAlgarismos(longVar);
+    int larguraInt = contarAlgarismos(intVar);
+    int larguraFloat = contarAlgarismos(floatVar) + 2; // Largura total = 6 dígitos inteiros + 1 ponto decimal + 2 casas decimais
+    int larguraDouble = contarAlgarismos(doubleVar) + 2; // Largura total = 6 dígitos inteiros + 1 ponto decimal + 2 casas decimais
+
+    printf("%*hd%*ld%*d\n", larguraShort + 4, shortVar, larguraLong + 20 - larguraShort, longVar, larguraInt + 20 - larguraLong, intVar);
+    printf("%*.*f%*.*lf%*c\n", larguraFloat + 15, 2, floatVar, larguraDouble + 20 - larguraFloat, 2, doubleVar, 7, charVar);
 
     return 0;
 }
+
 
 #endif
 
