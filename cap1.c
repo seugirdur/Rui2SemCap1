@@ -80,7 +80,7 @@ int main() {
     scanf("%lf", &doubleVar);
 
     printf("Digite um valor do tipo char: ");
-    scanf(" %c", &charVar); // Note o espaço antes de %c para ignorar espaços em branco
+    scanf(" %c", &charVar);
 
     printf("\n");
     printf("        10        20        30        40        50        60\n");
@@ -89,11 +89,22 @@ int main() {
     int larguraShort = contarAlgarismos(shortVar);
     int larguraLong = contarAlgarismos(longVar);
     int larguraInt = contarAlgarismos(intVar);
-    int larguraFloat = contarAlgarismos(floatVar) + 2; // Largura total = 6 dígitos inteiros + 1 ponto decimal + 2 casas decimais
-    int larguraDouble = contarAlgarismos(doubleVar) + 2; // Largura total = 6 dígitos inteiros + 1 ponto decimal + 2 casas decimais
+    int larguraFloat = contarAlgarismos(floatVar) + 2;
+    int larguraDouble = contarAlgarismos(doubleVar) + 2;
 
     printf("%*hd%*ld%*d\n", larguraShort + 4, shortVar, larguraLong + 20 - larguraShort, longVar, larguraInt + 20 - larguraLong, intVar);
     printf("%*.*f%*.*lf%*c\n", larguraFloat + 15, 2, floatVar, larguraDouble + 20 - larguraFloat, 2, doubleVar, 7, charVar);
+
+    printf("\nDigite X para sair  \n");
+    char saida;
+    while(saida != 'X' && saida != 'x')
+    {
+        scanf(" %c", &saida);
+
+        if(saida != 'X' && saida != 'x') {
+            printf("Erro, digite novamente  \n");
+        }
+    }
 
     return 0;
 }
