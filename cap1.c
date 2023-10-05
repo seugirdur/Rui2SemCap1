@@ -2,6 +2,7 @@
 
 /*1 - Escreva um programa que receba via teclado um tempo em segundos e converta
     para horas, minutos e segundos.
+
     Ex.: recebe 3850 segundos que converte para 1h 4min 10s.*/
 #ifdef aula1ex1
 #include <stdio.h>
